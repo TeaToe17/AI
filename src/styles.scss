@@ -1,0 +1,354 @@
+$default-padding: 60px;
+$default-font: "Inter", sans-serif !important;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == smallphones {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
+}
+
+body {
+  background-color: #12141d;
+  padding: $default-padding;
+  padding-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.lorem {
+  text-align: center;
+  color: #b7b7b7;
+}
+.button-on-page:hover {
+  transform: scale(0.95);
+}
+.free-trials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.App {
+  .navigationBar {
+    .navigationBarContents {
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Inter", sans-serif !important;
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 63px;
+          width: 544px;
+          height: 24px;
+          .imglogo {
+            width: 59px;
+            height: 24px;
+            gap: 16px;
+            display: flex;
+            align-items: center;
+          }
+          h1 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21.78px;
+          }
+        }
+        .navlinks {
+          display: flex;
+          gap: 10px;
+          width: 422px;
+          justify-content: space-between;
+          a {
+            color: #e0e0e0;
+            height: 17px;
+            gap: 52px;
+            display: flex;
+            align-items: baseline;
+            text-decoration: none;
+            &:hover {
+              color: #121a47;
+            }
+          }
+          a.active {
+            color: #121a47;
+            font-weight: bold;
+          }
+          @include respond-to(mobile) {
+            display: none;
+          }
+          @include respond-to(tablet) {
+            gap: 5px;
+            width: 300px;
+          }
+        }
+        .menuToggle {
+          display: none;
+          @include respond-to(mobile) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            right: 0;
+            top: 50px;
+            background-color: #010727;
+            height: 100vh;
+            box-shadow: -0.5px 1.5px 8.5px -0.5px #061638;
+            gap: 30px;
+            width: 70%;
+            z-index: 1;
+            position: fixed;
+            border-radius: 20px;
+            
+            a {
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 20px;
+              font-family: $default-font;
+            }
+          }
+        }
+        .signin-up {
+          display: flex;
+          gap: 10px;
+          @include respond-to(mobile) {
+            display: none;
+          }
+        }
+        .menu {
+          display: none;
+          @include respond-to(mobile) {
+            display: flex;
+            color: #b7b7b7;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  .home {
+    display: flex;
+    height: 441px;
+    margin-top: 100px;
+    border-bottom: #010727 solid 1px;
+    .boxleft {
+      width: 200px;
+      flex-shrink: 0;
+      height: 286px;
+      border-radius: 286px;
+      background: rgba(252, 116, 58, 0.1);
+      filter: blur(75px);
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+    .homePageContents {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 0px;
+      width: 100%;
+      height: 405px;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      .contentBox {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 60px;
+
+        .top-content {
+          .intro {
+            color: #e0e0e0;
+            font-family: $default-font;
+            .main {
+              p {
+                word-spacing: 4px;
+                letter-spacing: 2px;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 40px;
+                font-family: "Outfit", sans-serif;
+                color: #b7b7b7;
+                margin: 0px;
+                @include respond-to(mobile) {
+                  font-size: 30px;
+                }
+                @media (max-width: 420px) {
+                  font-size: 25px;
+                }
+              }
+              .ads {
+                background: linear-gradient(90deg, #ffc947 0%, #fc6739 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-decoration-line: underline;
+                margin: 0px;
+                @include respond-to(mobile) {
+                  font-size: 30px;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #b7b7b7;
+          gap: 8px;
+        }
+      }
+    }
+    .boxright {
+      position: relative;
+      width: 200px;
+      flex-shrink: 0;
+      height: 286px;
+      border-radius: 286px;
+      background: rgba(252, 116, 58, 0.1);
+      filter: blur(75px);
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+  }
+  .signUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+
+    .signUpPageContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form {
+        width: 300px;
+        height: max-content;
+        background-color: #232636;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0.5px -1.5px 9.5px -2px #121a47;
+        .back{
+          position: absolute;
+          top: 0;
+          left: 5px;
+          font-size: 30px;
+          color: #ffffff;
+          
+        }
+        .logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+        span {
+          font-weight: 600;
+          font-size: 30px;
+          display: flex;
+          color: #ffffff;
+          font-family: "Bitter", serif;
+        }
+        p {
+          font-size: 20px;
+          font-weight: 400;
+        }
+        .inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          input {
+            padding: 20px;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid #12141d;
+            &::placeholder {
+              color: #e0e0e0;
+            }
+          }
+          button {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #010727;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              background-color: #050714;
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
+  }
+  .sponsors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .text {
+      font-family: $default-font;
+      color: #b7b7b7;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 25.2px;
+      margin: 35px;
+      @include respond-to(mobile) {
+        font-size: 14px;
+      }
+    }
+    img {
+      @include respond-to(mobile) {
+        width: 320px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+}
