@@ -4,11 +4,25 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Button from "./Button";
 import logo from "./img/logo.png";
+
+
+
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [menuTogle, setMenuToggle] = useState(false);
   const toggleMenu = () => {
     setMenuToggle(!menuTogle);
+  };
+ 
+  const [err, setErr] = useState(false)
+  const handleLogout = async () => {
+    const auth = auth();
+    try {
+      await auth.signOut();
+    } catch (err) {
+      setErr(true);
+    }
   };
   return (
     <>
@@ -72,7 +86,14 @@ const Navbar = () => {
                 }}
               />
             </div>
-            <i class="fi fi-br-menu-burger menu" onClick={toggleMenu}></i>
+            <button onClick={toggleMenu} className="triggerButton">
+              {!menuTogle ? (
+                <i class="fi fi-br-menu-burger menu"></i>
+                
+              ) : (
+                <i class="fi fi-br-cross menu"></i>
+              )}
+            </button>
           </nav>
         </div>
       </div>

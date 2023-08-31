@@ -48,18 +48,35 @@ body {
   align-items: center;
   justify-content: center;
 }
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #474bff 94%, #0000) top/9px 9px
+      no-repeat,
+    conic-gradient(#0000 30%, #474bff);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
 .App {
   .navigationBar {
     .navigationBarContents {
       nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         font-family: "Inter", sans-serif !important;
         .logo {
           display: flex;
           align-items: center;
           gap: 63px;
+          justify-content: space-between;
           width: 544px;
           height: 24px;
           .imglogo {
@@ -112,22 +129,24 @@ body {
             justify-content: center;
             align-items: center;
             position: fixed;
-            right: 0;
-            top: 50px;
-            background-color: #010727;
+            left: 0;
+            top: 0;
+            background-color: #010727c2;
             height: 100vh;
             box-shadow: -0.5px 1.5px 8.5px -0.5px #061638;
-            gap: 30px;
+            gap: 35px;
+            backdrop-filter: blur(10px);
             width: 70%;
             z-index: 1;
             position: fixed;
             border-radius: 20px;
-            
+
             a {
               color: #ffffff;
               text-decoration: none;
               font-size: 20px;
               font-family: $default-font;
+              border-bottom: 1px solid #061638;
             }
           }
         }
@@ -138,12 +157,20 @@ body {
             display: none;
           }
         }
-        .menu {
+        .triggerButton {
+          background-color: transparent;
+          border: none;
           display: none;
           @include respond-to(mobile) {
             display: flex;
-            color: #b7b7b7;
-            font-size: 30px;
+          }
+          .menu {
+            display: none;
+            @include respond-to(mobile) {
+              display: flex;
+              color: #b7b7b7;
+              font-size: 30px;
+            }
           }
         }
       }
@@ -270,13 +297,22 @@ body {
         border-radius: 10px;
         position: relative;
         box-shadow: 0.5px -1.5px 9.5px -2px #121a47;
-        .back{
+        .back {
           position: absolute;
           top: 0;
           left: 5px;
           font-size: 30px;
           color: #ffffff;
-          
+          animation: bounce 1s linear infinite;
+          @keyframes bounce {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
         }
         .logo {
           display: flex;
@@ -290,10 +326,14 @@ body {
           display: flex;
           color: #ffffff;
           font-family: "Bitter", serif;
+          .login-signup {
+            color: #2a7bc7;
+          }
         }
         p {
-          font-size: 20px;
+          font-size: 25px;
           font-weight: 400;
+          color: #2a7bc7;
         }
         .inputs {
           display: flex;
@@ -305,7 +345,7 @@ body {
             background-color: transparent;
             border-bottom: 1px solid #12141d;
             &::placeholder {
-              color: #e0e0e0;
+              color: #e0e0e080;
             }
           }
           button {
@@ -348,7 +388,4 @@ body {
       }
     }
   }
-}
-
-@media (max-width: 420px) {
 }

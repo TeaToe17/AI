@@ -1,26 +1,25 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {auth} from '../fireebaseConfig'
-import {createUserWithEmailAndPassword} from 'firebase/auth'
+import { auth } from "../fireebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import logo from "./img/logo.png";
 const Signup = () => {
   const navigate = useNavigate();
-  const [err, setErr] = useState(false)
-const handleSubmit = async (e)=>{
-  e.preventDefault();
-  const username = e.target[0].value
-  const email =e.target[1].value
-  const password = e.target[2].value
-
-  
-  try{
-    const res =  createUserWithEmailAndPassword(auth, email, password);
-    navigate("/home ")
-    console.log(res)
-  }catch(err){
-    setErr(true)
-  }
-}
+  const [err, setErr] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const username = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    try {
+      const res = createUserWithEmailAndPassword(auth, email, password);
+      navigate("/");
+      console.log(res);
+    } catch (err) {
+      setErr(true);
+      console.log(err)
+    }
+  };
   return (
     <div>
       <div className="signUp">
@@ -52,9 +51,9 @@ const handleSubmit = async (e)=>{
               }}
             >
               Already have an account?{" "}
-              <p
+              <p className="login-signup"
                 onClick={() => navigate("/signin")}
-                style={{ color: "red", textDecoration: "underline" }}
+                style={{ color: "", textDecoration: "underline" }}
               >
                 Login
               </p>

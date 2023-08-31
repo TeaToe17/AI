@@ -10,16 +10,14 @@ const Signin = () => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    if(!auth.user){
-      navigate("signup")
-    }
 
     try {
       const res = signInWithEmailAndPassword(auth, email, password);
-      navigate("/home")
+      navigate("/")
       console.log(res)
     }catch(err){
       setErr(true)
+      navigate("/signin")
     }
   };
   return (
@@ -51,9 +49,9 @@ const Signin = () => {
               }}
             >
               Don't have an Account?{" "}
-              <p
+              <p className="login-signup"
                 onClick={() => navigate("/signup")}
-                style={{ color: "red", textDecoration: "underline" }}
+                style={{ color: "", textDecoration: "underline" }}
               >
                 Sign Up
               </p>
