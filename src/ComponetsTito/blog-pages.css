@@ -283,7 +283,7 @@ hr {
 @media (max-width: 420px) {
   .blogdiv {
     width: 450px;
-    height: 140vh;
+    height: 260vh;
   }
   .flexBasic {
     width: 450px;
@@ -301,11 +301,13 @@ hr {
     padding-left: 15px;
   }
   .display {
-    height: 115vh;
+    height: fit-content;
     width: 80%;
   }
   .pagesdiv {
     width: 450px;
+    height: 310vh;
+
   }
   .blogbacklight {
     top: 0;

@@ -8,6 +8,8 @@ import Signin from "./Components/Signin";
 import { Loader } from "./Components/Loader";
 import Pages from "./ComponetsTito/Pages";
 import Blog from "./ComponetsTito/blog";
+import Contact from "./ComponentsVictor/component/Contact";
+import "./ComponentsVictor/component/Victor.css"
 
 function App() {
   return (
@@ -38,6 +40,15 @@ function App() {
           element={
             <React.Suspense fallback={<Loader />}>
               <Blog />
+            </React.Suspense>
+          }
+        />
+
+        <Route
+          path="contact"
+          element={
+            <React.Suspense fallback={<Loader />}>
+              <Contact />
             </React.Suspense>
           }
         />
