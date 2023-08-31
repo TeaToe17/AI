@@ -47,7 +47,7 @@ const Signup = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
-                fontSize: "18px",
+                fontSize: "13px",
               }}
             >
               Already have an account?{" "}

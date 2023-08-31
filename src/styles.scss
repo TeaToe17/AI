@@ -297,6 +297,9 @@ body {
         border-radius: 10px;
         position: relative;
         box-shadow: 0.5px -1.5px 9.5px -2px #121a47;
+        @include respond-to(smallphones){
+          width: 88%;
+        }
         .back {
           position: absolute;
           top: 0;
@@ -326,6 +329,9 @@ body {
           display: flex;
           color: #ffffff;
           font-family: "Bitter", serif;
+           @include respond-to(smallphones){
+            font-size: 10px;
+          }
           .login-signup {
             color: #2a7bc7;
           }
@@ -334,6 +340,7 @@ body {
           font-size: 25px;
           font-weight: 400;
           color: #2a7bc7;
+         
         }
         .inputs {
           display: flex;
