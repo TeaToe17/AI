@@ -5,17 +5,16 @@ import { useState } from "react";
 import Button from "./Button";
 import logo from "./img/logo.png";
 
-
-
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [menuTogle, setMenuToggle] = useState(false);
+
+  
   const toggleMenu = () => {
     setMenuToggle(!menuTogle);
   };
- 
-  const [err, setErr] = useState(false)
+
+  const [err, setErr] = useState(false);
   const handleLogout = async () => {
     const auth = auth();
     try {
@@ -36,7 +35,6 @@ const Navbar = () => {
               </div>
               <div className="navlinks">
                 <NavLink to="/">Demo</NavLink>
-                <NavLink to="/about">About</NavLink>
                 <NavLink to="/blog">Blog</NavLink>
                 <NavLink to="/pages">Pages</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
@@ -44,7 +42,6 @@ const Navbar = () => {
               {menuTogle && (
                 <div className="menuToggle">
                   <NavLink to="/">Demo</NavLink>
-                  <NavLink to="/about">About</NavLink>
                   <NavLink to="/blog">Blog</NavLink>
                   <NavLink to="/pages">Pages</NavLink>
                   <NavLink to="/contact">Contact</NavLink>
@@ -89,7 +86,6 @@ const Navbar = () => {
             <button onClick={toggleMenu} className="triggerButton">
               {!menuTogle ? (
                 <i class="fi fi-br-menu-burger menu"></i>
-                
               ) : (
                 <i class="fi fi-br-cross menu"></i>
               )}

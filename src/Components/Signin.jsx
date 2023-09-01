@@ -23,7 +23,7 @@ const Signin = () => {
   return (
     <div>
       <div className="signUp">
-        {err && <span>Please check your  detils</span>}
+        {err && <span>Please check your  details</span>}
         <div className="signUpPageContent">
           <form onSubmit={handleSubmit}>
             <i

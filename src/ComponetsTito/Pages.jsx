@@ -45,7 +45,7 @@ export default function Pages() {
   const fifthHandle = () => {
     setFirst(false);
     setSecond(false);
-    setFifth(false);
+    setThird(false);
     setFourth(false);
     setFifth(true);
     setSixth(false);
@@ -53,7 +53,7 @@ export default function Pages() {
   const sixthHandle = () => {
     setFirst(false);
     setSecond(false);
-    setFifth(false);
+    setThird(false);
     setFourth(false);
     setFifth(false);
     setSixth(true);
@@ -119,10 +119,10 @@ export default function Pages() {
                 <div>
                   <Pagescomp
                     title="7 Blog headlines generated"
-                    li1="The more important the Work,The more important the Rest"
+                    li1="How to design a product that can grow itself 10x in a year"
                     li2="Any mechanical keyboard enthusiast in design?"
                     li3="Create original content that ranks for seo"
-                    li4="How to design a product that can grow itself 10x in a year"
+                    li4="The more important the Work,The more important the Rest"
                   />
                 </div>
               )}

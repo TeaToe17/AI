@@ -4,7 +4,7 @@
 }
 
 .p_2 {
-  color: #B7B7B7;
+  color: #b7b7b7;
   text-align: center;
   font-family: Inter;
   font-size: 17px;
@@ -26,7 +26,7 @@
 
 body {
   display: flex;
-  background-color: #12141D;
+  background-color: #12141d;
   flex-direction: column;
   justify-content: center;
   overflow-x: hidden;
@@ -51,12 +51,12 @@ body {
 }
 
 .at {
-  color: #1C93D7;
+  color: #1c93d7;
 }
 
 .what {
   font-size: 15px;
-  color: #EFEFEF;
+  color: #efefef;
   line-height: normal;
   font-weight: 600;
 }
@@ -69,7 +69,10 @@ body {
 }
 
 .color {
-  background: var(--gradient, linear-gradient(100deg, #2e57eb 05%, #BB2BFF 60%));
+  background: var(
+    --gradient,
+    linear-gradient(100deg, #2e57eb 05%, #bb2bff 60%)
+  );
   display: flex;
   width: 227px;
   border-radius: 15px;
@@ -79,7 +82,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  color: #E0E0E0;
+  color: #e0e0e0;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -98,12 +101,24 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  color: #E0E0E0;
+  color: #e0e0e0;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   flex-shrink: 0;
+}
+.noncolor:hover {
+  background: var(
+    --gradient,
+    linear-gradient(100deg, #2e57eb 05%, #bb2bff 60%)
+  );
+}
+.color:hover {
+  background: var(
+    --gradient,
+    linear-gradient(100deg, #2e57eb 05%, #bb2bff 60%)
+  );
 }
 
 .h_7 {
@@ -144,11 +159,10 @@ a {
 }
 
 .link {
-  color: #DCDCDC;
+  color: #dcdcdc;
   font-size: 16.902px;
   font-style: normal;
   font-weight: 700;
-
 }
 
 .trial_1 {
@@ -166,7 +180,7 @@ a {
 .bring {
   display: flex;
   align-items: flex-start;
-  color: #E0E0E0;
+  color: #e0e0e0;
   font-size: 28px;
   width: 476px;
   height: 76px;
@@ -181,7 +195,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 208px;
-  background: var(--gradient, linear-gradient(90deg, #2B59FF 0%, #BB2BFF 100%));
+  background: var(--gradient, linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%));
 }
 
 .k1 {
@@ -189,7 +203,7 @@ a {
   flex-direction: column;
   width: 229px;
   height: 306px;
-  color: #B7B7B7;
+  color: #b7b7b7;
   align-items: flex-start;
   gap: 18px;
 }
@@ -203,8 +217,6 @@ a {
   gap: 130px;
   padding-bottom: 40px;
 }
-
-
 
 .div_container2 {
   display: inline-flex;
@@ -226,7 +238,7 @@ a {
 }
 
 .deep {
-  color: #E0E0E0;
+  color: #e0e0e0;
   text-align: center;
   font-family: Outfit;
   font-size: 40px;
@@ -237,7 +249,7 @@ a {
 
 .p_0 {
   margin: -15px 0 -70px;
-  color: #B7B7B7;
+  color: #b7b7b7;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -278,7 +290,7 @@ a {
 }
 
 .big_5 {
-  color: #E0E0E0;
+  color: #e0e0e0;
   width: 410px;
   height: 100px;
   text-align: center;
@@ -288,10 +300,8 @@ a {
   line-height: 40px;
 }
 
-
-
 .p_19 {
-  color: #DDD;
+  color: #ddd;
   text-align: center;
   font-size: 16px;
   padding: 10px;
@@ -344,17 +354,16 @@ a {
 }
 
 .p_1 {
-  color: #E0E0E0;
+  color: #e0e0e0;
   text-align: center;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-@media (max-width:800px) {
-  
+@media (max-width: 800px) {
 }
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .flex_1 {
     display: flex;
     width: 381px;
@@ -366,9 +375,10 @@ a {
   }
 
   body {
-    width: fit-content;
     overflow-x: hidden;
+    width: fit-content;
   }
+
 
   .div_container {
     width: 100%;
@@ -394,7 +404,7 @@ a {
   }
 
   .bring {
-    color: #E0E0E0;
+    color: #e0e0e0;
     font-size: 30px;
     width: 312px;
     height: 152px;
@@ -409,8 +419,7 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     grid-template-rows: repeat(2, 2fr);
-    grid-column-gap:2px;
+    grid-column-gap: 2px;
     grid-row-gap: 0px;
   }
-
 }

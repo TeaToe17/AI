@@ -23,9 +23,9 @@ const Home = () => {
                       <p className="ads">facebook ads</p>
                     </div>
                   </div>
-                  <p className="lorem">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Labore voluptates tempora id, error provident hic? Veniam
+                  <p className="loremE">
+                    Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit.
+                    Labore voluptates tempora id,<br/> error provident hic? Veniam
                   </p>
                 </div>
                 <div className="free-trials">

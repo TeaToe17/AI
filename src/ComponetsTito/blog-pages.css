@@ -1,23 +1,22 @@
 body {
   margin: 0;
   padding: 0;
+  width: 500;
   box-sizing: border-box;
-}
-p {
-  max-width: 80%;
 }
 .blogdiv {
   position: relative;
-  background-color: rgb(5, 5, 34);
-  height: 200%;
-  width: 100%;
+  background-color: #12141d;
+  height: fit-content;
   padding-top: 3vh;
   margin: 0;
+  width: fit-content;
+  box-sizing: border-box;
 }
 .blogbacklight {
   position: absolute;
   bottom: 30vh;
-  right: 20vw;
+  right: 7vw;
   width: 499px;
   height: 499px;
   flex-shrink: 0;
@@ -55,6 +54,10 @@ p {
   box-sizing: border-box;
   box-sizing: border-box;
 }
+.blogtext p,
+.blogtext2 p {
+  width: 80%;
+}
 .blogcontents2 {
   display: flex;
   padding-top: 50px;
@@ -64,8 +67,7 @@ p {
   width: 352px;
   height: 350px;
   flex-basis: 40%;
-  padding-right: 20%;
-  padding-left: 50%;
+  padding-left: 60px;
 }
 .blogtext2 {
   flex-basis: 30%;
@@ -74,9 +76,9 @@ p {
   padding-left: 5%;
 }
 .pagesdiv {
-  background-color: rgb(5, 5, 34);
+  background-color: #12141d;
   height: 105vh;
-  width: 100%;
+  width: 60vw;
   padding-top: 7vh;
   color: antiquewhite;
   box-sizing: border-box;
@@ -97,13 +99,14 @@ p {
 .pagesheader {
   display: flex;
   justify-content: center;
+
 }
 .pagesdiv h3 {
-  width: 20%;
+  width: 50%;
   text-align: center;
 }
 .pagesblock {
-  background-color: rgba(5, 5, 34, 0.6);
+  background-color: #12141d;
   height: 60vh;
   width: 60vw;
   box-sizing: border-box;
@@ -139,7 +142,6 @@ p {
   width: 80%;
   height: 14.33%;
   border-radius: 4px;
-  margin-left: 6px;
   margin-top: 6px;
   outline: none;
   border: 1px solid rgb(46, 40, 40);
@@ -182,6 +184,7 @@ p {
 .pagescomp li {
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 17px;
 }
 .pagescomp h5 {
   padding-left: 15px;
@@ -196,7 +199,13 @@ hr {
 
 @media (max-width: 1150px) {
   .blogdiv {
-    height: 180vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 21px;
+  }
+  .blogdiv h3 {
+    width: 80%;
   }
   .blogcontents {
     width: 400px;
@@ -209,8 +218,8 @@ hr {
     width: 240px;
   }
   .blogcontents img {
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
   }
   .blogtext {
     text-align: left;
@@ -224,38 +233,49 @@ hr {
     width: 400px;
   }
   .blogcontents2 img {
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
     margin-top: 10px;
-    margin-left: 10px;
   }
   .blogtext2 {
     text-align: left;
     padding-left: 5%;
     width: 90vw;
   }
+  .body {
+    width: fit-content;
+  }
   .pagesdiv {
-    height: 200vh;
+    display: inline-block;
+    height: 100vh;
+    width: fit-content;
+    padding-left: 20vw;
   }
   .pagesheader h3 {
     font-size: 17px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    margin-left: 100px;
   }
   .pagesblock {
     display: block;
   }
   .buttonsdiv {
-    width: 60vw;
+    width: 100vw;
     height: 60vh;
     border-radius: 10px;
     flex-basis: 30%;
   }
   .buttonsdiv button {
     font-size: 20px;
+    display: grid;
+    justify-content: center;
   }
   .display {
-    width: 80%;
-    height: 105vh;
+    width: 130%;
+    height: fit-content;
+    padding: 10px;
   }
   .pagescomp {
     width: 70%;
@@ -266,53 +286,40 @@ hr {
     margin-top: 35px;
     margin-bottom: 35px;
   }
+  .pagescomp li {
+    margin-left: 25px;
+  }
   .pagesbacklight {
     position: absolute;
     top: 100vh;
+    display: none;
   }
   .blogbacklight2 {
     width: 200px;
+    display: none;
   }
-  .pagesbacklight {
-    width: 200px;
-  }
-  .blogcontents2 img {
-    padding: 0;
+  .blogbacklight {
+    display: none;
   }
 }
 @media (max-width: 420px) {
-  .blogdiv {
-    width: 450px;
-    height: 260vh;
-  }
-  .flexBasic {
-    width: 450px;
-  }
   .blogtext {
-    padding-left: 10px;
+    margin-left: 50px;
   }
-  .blogbacklight2 {
-    left: 0;
+  .blogtext2 {
+    margin-left: 50px;
   }
   .blogcontents2 img {
     width: 270px;
     height: 270px;
     padding-top: 5px;
-    padding-left: 15px;
   }
   .display {
     height: fit-content;
-    width: 80%;
+    width: 130%;
   }
   .pagesdiv {
-    width: 450px;
     height: 310vh;
-
-  }
-  .blogbacklight {
-    top: 0;
-  }
-    .blogbacklight2 {
-    top: 0;
+    padding-left: 20vw;
   }
 }

@@ -3,13 +3,13 @@ $default-font: "Inter", sans-serif !important;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: 768px) {
+    @media (max-width: 620px) {
       @content;
     }
   }
 
   @if $breakpoint == tablet {
-    @media (max-width: 768px) {
+    @media (max-width: 620px) {
       @content;
     }
   }
@@ -34,9 +34,10 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.lorem {
+.loremE {
   text-align: center;
   color: #b7b7b7;
+  padding-bottom: 10px;
 }
 .button-on-page:hover {
   transform: scale(0.95);
@@ -329,7 +330,7 @@ body {
           display: flex;
           color: #ffffff;
           font-family: "Bitter", serif;
-           @include respond-to(smallphones){
+          @include respond-to(smallphones){
             font-size: 10px;
           }
           .login-signup {
@@ -340,7 +341,6 @@ body {
           font-size: 25px;
           font-weight: 400;
           color: #2a7bc7;
-         
         }
         .inputs {
           display: flex;

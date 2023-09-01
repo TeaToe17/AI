@@ -22,7 +22,7 @@ const DivContainer2 = () => {
             money="$79"
             kw="Basic plan"
             gig="15"
-            className="color"
+            className="noncolor"
             domain="Free customer domain"
             sup="5 year support"
             stat="Basic statistics"
@@ -35,7 +35,7 @@ const DivContainer2 = () => {
             className="noncolor"
             stat="Full statistics"
             domain="Free customer domain"
-            sup="Unlimietd support"
+            sup="Unlimited support"
             started="Get started"
           />
         </div>
