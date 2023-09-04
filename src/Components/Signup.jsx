@@ -13,7 +13,7 @@ const Signup = () => {
     const password = e.target[2].value;
     try {
       const res = createUserWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      navigate("/demo");
       console.log(res);
     } catch (err) {
       setErr(true);
@@ -28,7 +28,7 @@ const Signup = () => {
           <form onSubmit={handleSubmit}>
             <i
               class="fi fi-br-arrow-left back"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/demo")}
             ></i>
             <div className="logo">
               <img src={logo} alt="" />

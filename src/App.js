@@ -17,8 +17,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/"
-          index
+          path="demo"
+          
           element={
             <React.Suspense fallback={<Loader />}>
               <Home />
@@ -54,7 +54,8 @@ function App() {
         />
 
         <Route
-          path="signup"
+          path="/"
+          index
           element={
             <React.Suspense fallback={<Loader />}>
               <Signup />

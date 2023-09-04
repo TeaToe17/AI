@@ -12,7 +12,7 @@ const Foot = () => {
             <a href="#">Wotks</a>
             <a href="#">Career</a>
           </div>
-          <div className="h_7">
+          <div className="h_7 one">
             <p className="link" >Help</p>
             <a href="#">Customer support</a>
             <a href="#">Delivery details</a>
@@ -26,7 +26,7 @@ const Foot = () => {
             <a href="#">How to - blog</a>
             <a href="#">Youtube playlist</a>
           </div>
-          <div className="h_7">
+          <div className="h_7 two">
             <p className="link">Links</p>
             <a href="#">Free eBooks</a>
             <a href="#">Develepment tutorial</a>

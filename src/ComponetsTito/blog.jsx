@@ -16,9 +16,9 @@ const Blog = () => {
           <img src={result}></img>
         </div>
         <div className="blogtext">
-          <h3>
+          <h2>
             Create Contents efficiently and quick with great AI writing tools
-          </h3>
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illum
             alias fuga ipsa quibusdam, corporis sunt enim tenetur ratione hic
@@ -43,9 +43,9 @@ const Blog = () => {
       </div>
       <div className="blogcontents2">
         <div className="blogtext2">
-          <h3>
+          <h2>
             Write what you want to convey through clear,& authentic writing
-          </h3>
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illum
             alias fuga ipsa quibusdam, corporis sunt enim tenetur ratione hic
