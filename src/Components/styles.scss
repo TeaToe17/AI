@@ -183,8 +183,11 @@ $default-font: "Inter", sans-serif !important;
     border-bottom: #010727 solid 1px;
     width: fit-content;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-left: 6vw;
     margin-right: 6vw;
+    z-index: 2;
     .boxleft {
       width: 200px;
       flex-shrink: 0;
@@ -192,6 +195,8 @@ $default-font: "Inter", sans-serif !important;
       border-radius: 286px;
       background: rgba(252, 116, 58, 0.1);
       filter: blur(75px);
+      z-index: -2;
+
       @include respond-to(mobile) {
         display: none;
       }
@@ -276,6 +281,8 @@ $default-font: "Inter", sans-serif !important;
       border-radius: 286px;
       background: rgba(252, 116, 58, 0.1);
       filter: blur(75px);
+      z-index: -2;
+
       @include respond-to(mobile) {
         display: none;
       }
@@ -303,7 +310,7 @@ $default-font: "Inter", sans-serif !important;
         border-radius: 10px;
         position: relative;
         box-shadow: 0.5px -1.5px 9.5px -2px #121a47;
-        @include respond-to(smallphones){
+        @include respond-to(smallphones) {
           width: 88%;
         }
         .back {
@@ -335,7 +342,7 @@ $default-font: "Inter", sans-serif !important;
           display: flex;
           color: #ffffff;
           font-family: "Bitter", serif;
-          @include respond-to(smallphones){
+          @include respond-to(smallphones) {
             font-size: 10px;
           }
           .login-signup {

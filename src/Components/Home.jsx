@@ -1,16 +1,17 @@
-import React, { Suspense } from "react";
+import React, {useContext} from "react";
 import Button from "./Button";
 import video from "./video-circle.png";
-import Sponsors from "./Sponsors";
-import { Loader } from "./Loader";
+import "./styles.scss";
+
+import { ContextDemo } from "../ComponetsTito/components/AuthDetails";
 
 const Home = () => {
+  const Access = useContext(ContextDemo);
   return (
-    <>
-      <Suspense fallback={<Loader/>}>
-        <div className="home">
+    <div className="home">
+      {Access && (
+        <>
           <div className="boxleft"></div>
-
           <div className="homePageContents">
             <div className="div_c">
               <div className="contentBox">
@@ -24,8 +25,9 @@ const Home = () => {
                     </div>
                   </div>
                   <p className="loremE">
-                    Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit.
-                    Labore voluptates tempora id,<br/> error provident hic? Veniam
+                    Lorem ipsum dolor sit amet consectetur <br /> adipisicing
+                    elit. Labore voluptates tempora id,
+                    <br /> error provident hic? Veniam
                   </p>
                 </div>
                 <div className="free-trials">
@@ -56,12 +58,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <div className="boxright"></div>
           </div>
-          <div className="boxright"></div>
-        </div>
-        <Sponsors />
-      </Suspense>
-    </>
+        </>
+      )}
+    </div>
   );
 };
 
