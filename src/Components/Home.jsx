@@ -1,6 +1,7 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Button from "./Button";
-import video from "./video-circle.png";
+import video from "./img/video-circle.png";
+import footerPic from "./img/logos.png";
 import "./styles.scss";
 
 import { ContextDemo } from "../ComponetsTito/components/AuthDetails";
@@ -8,10 +9,10 @@ import { ContextDemo } from "../ComponetsTito/components/AuthDetails";
 const Home = () => {
   const Access = useContext(ContextDemo);
   return (
-    <div className="home">
-      {Access && (
-        <>
-          <div className="boxleft"></div>
+    <div>
+      <div className="boxleft"></div>
+      <div className="home">
+        {Access && (
           <div className="homePageContents">
             <div className="div_c">
               <div className="contentBox">
@@ -58,10 +59,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="boxright"></div>
+            <img className="footerPic" src={footerPic}></img>
           </div>
-        </>
-      )}
+        )}
+      </div>
+      <div className="boxright"></div>
     </div>
   );
 };

@@ -59,82 +59,98 @@ const Navbar = () => {
                   <NavLink to="/contact">Contact</NavLink>
                 </div>
               )}
-              {menuTogle && (
-                <div className="menuToggle">
-                  {Access && (
-                    <div>
-                      {" "}
-                      <NavLink to="/demo">Demo</NavLink>
-                      <NavLink to="/blog">Blog</NavLink>
-                      <NavLink to="/pages">Pages</NavLink>
-                      <NavLink to="/contact">Contact</NavLink>
-                    </div>
-                  )}
-                  {!Access && (
-                    <div>
-                      {" "}
-                      <NavLink to="/mysignup">Sign Up</NavLink>
-                      <NavLink to="/mysignin">Sign In</NavLink>
-                    </div>
-                  )}
+              {!Access && (
+                <div className="signIn">
+                  <Button
+                    onClick={() => navigate("mysignin")}
+                    text="Sign in"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%)",
+                      color: "#E0E0E0",
+                      border: "1px solid white",
+                      width: "116px",
+                      boxSizing: "border-box",
+                      cursor: "pointer",
+                      transition: "0.3s",
+                      width: "fitContent",
+                      active: "transform: matrix(0, 1, 1, 0, 0, 0)",
+                    }}
+                  />
+                </div>
+              )}
+              {!Access && (
+                <div>
+                  <Button
+                    className="signUp"
+                    onClick={() => navigate("mysignup")}
+                    text="Sign Up"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%)",
+                      color: "#E0E0E0",
+                      border: "1px solid white",
+                      width: "116px",
+                      boxSizing: "border-box",
+                      cursor: "pointer",
+                      transition: "0.3s",
+                      width: "fitContent",
+                    }}
+                  />
+                </div>
+              )}
+              {Access && (
+                <div className="signout">
+                  <Button
+                    onClick={() => HandleSignout()}
+                    text="Sign Out"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%)",
+                      color: "#E0E0E0",
+                      border: "1px solid white",
+                      width: "116px",
+                      boxSizing: "border-box",
+                      cursor: "pointer",
+                      transition: "0.3s",
+                      width: "fitContent",
+                    }}
+                  />
                 </div>
               )}
             </div>
-            {!Access && (
-              <div className="signin-up">
-                <Button
-                  onClick={() => navigate("mysignin")}
-                  text="Sign in"
-                  style={{
-                    backgroundColor: "transparent",
-                    color: "#E0E0E0",
-                    border: "1px solid white",
-                    width: "85px",
-                    padding: "10px",
-                    height: "34px",
-                    boxSizing: "border-box",
-                    cursor: "pointer",
-                    transition: "0.3s",
-                  }}
-                />
-                <Button
-                  onClick={() => navigate("mysignup")}
-                  text="Sign Up"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%)",
-                    color: "#E0E0E0",
-                    border: "1px solid white",
-                    width: "116px",
-                    padding: "10px",
-                    height: "34px",
-                    boxSizing: "border-box",
-                    cursor: "pointer",
-                    transition: "0.3s",
-                  }}
-                />
+            {menuTogle && (
+              <div>
+                {Access && (
+                  <div className="menuToggle">
+                    {" "}
+                    <NavLink to="/demo" onClick={() => toggleMenu()}>
+                      Demo
+                    </NavLink>
+                    <NavLink to="/blog" onClick={() => toggleMenu()}>
+                      Blog
+                    </NavLink>
+                    <NavLink to="/pages" onClick={() => toggleMenu()}>
+                      Pages
+                    </NavLink>
+                    <NavLink to="/contact" onClick={() => toggleMenu()}>
+                      Contact
+                    </NavLink>
+                  </div>
+                )}
+                {!Access && (
+                  <div className="menuToggle">
+                    {" "}
+                    <NavLink to="/mysignup" onClick={() => toggleMenu()}>
+                      Sign Up
+                    </NavLink>
+                    <NavLink to="/mysignin" onClick={() => toggleMenu()}>
+                      Sign In
+                    </NavLink>
+                  </div>
+                )}
               </div>
             )}
-
-            {Access && (
-              <Button
-                onClick={() => HandleSignout()}
-                text="Sign Out"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #2b59ff 0%, #bb2bff 100%)",
-                  color: "#E0E0E0",
-                  border: "1px solid white",
-                  width: "116px",
-                  padding: "10px",
-                  height: "34px",
-                  boxSizing: "border-box",
-                  cursor: "pointer",
-                  transition: "0.3s",
-                }}
-              />
-            )}
-
             <button onClick={toggleMenu} className="triggerButton">
               {!menuTogle ? (
                 <i class="fi fi-br-menu-burger menu"></i>

@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const Button = ({text, style, onClick}) => {
+const Button = ({ text, style, onClick }) => {
   return (
-    <>
-    <button style={style} className="button-on-page" onClick={onClick}>{text}</button>
-    </>
-  )
-}
+    <div className="buttonA">
+      <button style={style} className="button-on-page" onClick={onClick}>
+        {text}
+      </button>
+    </div>
+  );
+};
 
 export default Button;

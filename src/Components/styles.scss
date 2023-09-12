@@ -60,7 +60,7 @@ $default-font: "Inter", sans-serif !important;
 }
 .App {
   .navigationBar {
-    width: fit-content;
+    width: 100vw;
     .navigationBarContents {
       nav {
         display: flex;
@@ -68,25 +68,37 @@ $default-font: "Inter", sans-serif !important;
         justify-content: center;
         width: 100%;
         font-family: "Inter", sans-serif !important;
+        @include respond-to(mobile) {
+          width: 370px;
+        }
         .logo {
           display: flex;
           align-items: center;
-          gap: 63px;
           justify-content: space-between;
-          width: 73%;
-          height: 24px;
+          margin-top: 10px;
           .imglogo {
             width: 59px;
             height: 24px;
             gap: 16px;
             display: flex;
             align-items: center;
+            flex-basis: 20%;
           }
           h1 {
             color: #ffffff;
             font-size: 18px;
             font-weight: 700;
             line-height: 21.78px;
+          }
+          .navlinks {
+            flex-basis: 45%;
+          }
+          .signout {
+            flex-basis: 15%;
+          }
+          .signIn,
+          .signUp {
+            margin: 5px;
           }
         }
         .navlinks {
@@ -135,7 +147,7 @@ $default-font: "Inter", sans-serif !important;
             box-shadow: -0.5px 1.5px 8.5px -0.5px #061638;
             gap: 35px;
             backdrop-filter: blur(10px);
-            width: 70%;
+            width: 50%;
             z-index: 4;
             position: fixed;
             border-radius: 20px;
@@ -178,29 +190,14 @@ $default-font: "Inter", sans-serif !important;
   }
   .home {
     display: flex;
-    height: 441px;
     margin-top: 100px;
     border-bottom: #010727 solid 1px;
-    width: fit-content;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-left: 6vw;
     margin-right: 6vw;
     z-index: 2;
-    .boxleft {
-      width: 200px;
-      flex-shrink: 0;
-      height: 286px;
-      border-radius: 286px;
-      background: rgba(252, 116, 58, 0.1);
-      filter: blur(75px);
-      z-index: -2;
-
-      @include respond-to(mobile) {
-        display: none;
-      }
-    }
     .homePageContents {
       display: flex;
       justify-content: center;
@@ -271,20 +268,6 @@ $default-font: "Inter", sans-serif !important;
           color: #b7b7b7;
           gap: 8px;
         }
-      }
-    }
-    .boxright {
-      position: relative;
-      width: 200px;
-      flex-shrink: 0;
-      height: 286px;
-      border-radius: 286px;
-      background: rgba(252, 116, 58, 0.1);
-      filter: blur(75px);
-      z-index: -2;
-
-      @include respond-to(mobile) {
-        display: none;
       }
     }
   }
@@ -398,18 +381,48 @@ $default-font: "Inter", sans-serif !important;
       color: #b7b7b7;
       font-weight: 600;
       font-size: 20px;
-      line-height: 25.2px;
-      margin-top: 35px;
-      margin-bottom: 35px;
-      @include respond-to(mobile) {
-        font-size: 14px;
-      }
-    }
-    img {
-      @include respond-to(mobile) {
-        width: 70%;
-        height: 70px;
-      }
     }
   }
+}
+.boxleft {
+  position: absolute;
+  left: 100px;
+  width: 200px;
+  flex-shrink: 0;
+  height: 286px;
+  border-radius: 286px;
+  background: rgba(252, 116, 58, 0.1);
+  filter: blur(75px);
+  z-index: -1;
+
+  @include respond-to(mobile) {
+    display: none;
+  }
+}
+.boxright {
+  position: absolute;
+  right: 100px;
+  bottom: 40px;
+  width: 200px;
+  flex-shrink: 0;
+  height: 286px;
+  border-radius: 286px;
+  background: rgba(252, 116, 58, 0.1);
+  filter: blur(75px);
+  z-index: -1;
+
+  @include respond-to(mobile) {
+    display: none;
+  }
+}
+.footerPic {
+  width: 70vw;
+}
+@media (max-width: 450px) {
+  // .buttonA {
+  //   width: 10px;
+  //   padding: 0;
+  //   margin: 10px;
+  //   box-sizing: border-box;
+  // }
 }

@@ -13,7 +13,7 @@ const Blog = () => {
   console.log(Access)
   return (
     <div className="blogdiv">
-      { Access  && 
+      { true  && 
           <><div className="blogbacklight"></div><div className="blogbacklight2"></div><div className="blogcontents">
           <div className="blgcntsimg">
             <img src={result}></img>

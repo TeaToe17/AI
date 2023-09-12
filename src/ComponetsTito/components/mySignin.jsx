@@ -47,7 +47,11 @@ const MySignin = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit">Sign in</button>
-            {myerror && <div style={{ color: "red" }}>User not found</div>}
+            {myerror && (
+              <div style={{ color: "red" }}>
+                User not found OR Connection Error
+              </div>
+            )}
             <div style={{ color: "white" }}>
               Dont have an Account? <NavLink to="/mysignup">Sign Up</NavLink>
             </div>
