@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { auth } from "../firebase";
-import { NavLink} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ContextDemo } from "./AuthDetails";
 
 const MySignup = () => {
@@ -9,12 +9,14 @@ const MySignup = () => {
   const [password, setPassword] = useState("");
   const [reason, setReason] = useState("");
   const [displaySignup, setDisplaySignup] = useState(true);
+  const navigate = useNavigate();
 
   const handleSIgnup = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        navigate("/demo");
       })
       .catch((error) => {
         console.log(error);

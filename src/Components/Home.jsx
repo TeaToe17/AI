@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "./Button";
 import video from "./img/video-circle.png";
 import footerPic from "./img/logos.png";
@@ -8,11 +8,19 @@ import { ContextDemo } from "../ComponetsTito/components/AuthDetails";
 
 const Home = () => {
   const Access = useContext(ContextDemo);
+  let loading = false;
+
+  if (Access == false) {
+    loading=true;
+  } else {
+    loading=false;
+  }
+
   return (
     <div>
       <div className="boxleft"></div>
       <div className="home">
-        {Access && (
+        {Access?  (
           <div className="homePageContents">
             <div className="div_c">
               <div className="contentBox">
@@ -61,7 +69,7 @@ const Home = () => {
             </div>
             <img className="footerPic" src={footerPic}></img>
           </div>
-        )}
+        ):(<div className="loader" >Loading</div>)}
       </div>
       <div className="boxright"></div>
     </div>

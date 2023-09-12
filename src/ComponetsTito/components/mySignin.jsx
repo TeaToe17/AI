@@ -1,10 +1,11 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { auth } from "../firebase";
 
 import { ContextDemo } from "./AuthDetails";
+import "../blog-pages.css";
 
 const MySignin = () => {
   const [email, setEmail] = useState("");
@@ -26,38 +27,47 @@ const MySignin = () => {
       });
   };
 
-  const Access = useContext(ContextDemo);
+  //   useEffect(() => {
+  //     window.addEventListener("load", () => {
+  //       const loader = document.querySelector(".loader");
+  //       loader.classList.add("loader-hidden");
+  //       loader.addEventListener("transitionend", () => {
+  //         loader.remove();
+  //       });
+  //     });
+  //   }, []);
+
   console.log(myerror);
+
+  const Access = useContext(ContextDemo);
   return (
     <>
-      {!Access && (
-        <div className="signincontainer">
-          <form onSubmit={handleSIgnin}>
-            <h1 style={{ color: "white" }}>Sign In</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Sign in</button>
-            {myerror && (
-              <div style={{ color: "red" }}>
-                User not found OR Connection Error
+      {
+        !Access && (
+          <div className="signincontainer">
+            <form onSubmit={handleSIgnin}>
+              <h1 style={{ color: "white" }}>Sign In</h1>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="submit">Sign in</button>
+              {myerror && <div style={{ color: "red" }}>User not found</div>}
+              <div style={{ color: "white" }}>
+                Dont have an Account? <NavLink to="/mysignup">Sign Up</NavLink>
               </div>
-            )}
-            <div style={{ color: "white" }}>
-              Dont have an Account? <NavLink to="/mysignup">Sign Up</NavLink>
-            </div>
-          </form>
-        </div>
-      )}
+            </form>
+          </div>
+        )
+      }
     </>
   );
 };
