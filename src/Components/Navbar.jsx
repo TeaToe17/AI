@@ -83,7 +83,7 @@ const Navbar = () => {
                 <div>
                   <Button
                     className="signUp"
-                    onClick={() => navigate("mysignup")}
+                    onClick={() => navigate("/")}
                     text="Sign Up"
                     style={{
                       background:

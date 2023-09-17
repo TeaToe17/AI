@@ -7,7 +7,7 @@ import { ContextDemo } from "./AuthDetails";
 const MySignup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [reason, setReason] = useState("");
+  const [myerror, setMyError] = useState("");
   const [displaySignup, setDisplaySignup] = useState(true);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const MySignup = () => {
       })
       .catch((error) => {
         console.log(error);
-        setReason("Already in Use");
+        setMyError(error.code);
       });
   };
 
@@ -48,7 +48,10 @@ const MySignup = () => {
           <p style={{ color: "white" }}>
             Already have an Account? <NavLink to="/mysignin">Sign In</NavLink>{" "}
           </p>
-          <p>{reason}</p>
+          <p>
+            <NavLink to="/forgotpassword">Forgot Password</NavLink>
+          </p>
+          {myerror && <div style={{ color: "red" }}> {myerror} </div>}
         </form>
       )}
     </div>

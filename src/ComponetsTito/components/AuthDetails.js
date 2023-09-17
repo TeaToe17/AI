@@ -10,6 +10,7 @@ import Pages from "../Pages";
 import Contact from "../../ComponentsVictor/component/Contact";
 import MySignin from "./mySignin";
 import MySignup from "./mySignup";
+import Forgotpassword from "./Forgotpassword"
 
 export const ContextDemo = createContext();
 
@@ -45,7 +46,8 @@ const AuthDetails = () => {
           <Route path="/pages" element={<Pages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mysignin" element={<MySignin />} />
-          <Route path="/mysignup" index element={<MySignup />} />
+          <Route path="/" index element={<MySignup />} />
+          <Route path="/forgotpassword" element={<Forgotpassword />} />
         </Routes>
       </div>
     </ContextDemo.Provider>

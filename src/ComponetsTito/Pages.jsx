@@ -64,7 +64,7 @@ export default function Pages(displayPages) {
   const Access = useContext(ContextDemo)
   return (
     <>
-      {Access && (
+      {true && (
         <>
           <div className="pagesdiv">
             <div className="pagesbacklight"></div>
