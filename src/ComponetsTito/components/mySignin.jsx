@@ -44,27 +44,29 @@ const MySignin = () => {
       {!Access && (
         <div className="signincontainer">
           <form onSubmit={handleSIgnin}>
-            <h1 style={{ color: "white" }}>Sign In</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Sign in</button>
-            {myerror && <div style={{ color: "red" }}>{myerror}</div>}
-            <div style={{ color: "white" }}>
-              Dont have an Account? <NavLink to="/mysignup">Sign Up</NavLink>
+            <div className="innerSignInDiv">
+              <h1 style={{ color: "white" }}>Sign In</h1>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="submit">Sign in</button>
+              {myerror && <div style={{ color: "red" }}>{myerror}</div>}
+              <div style={{ color: "white" }}>
+                Dont have an Account? <NavLink to="/">Sign Up</NavLink>
+              </div>
+              <p>
+                <NavLink to="/forgotpassword">Forgot Password</NavLink>
+              </p>
             </div>
-            <p>
-              <NavLink to="/forgotpassword">Forgot Password</NavLink>
-            </p>
           </form>
         </div>
       )}

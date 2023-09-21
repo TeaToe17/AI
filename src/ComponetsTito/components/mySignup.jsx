@@ -30,21 +30,21 @@ const MySignup = () => {
     <div className="signupcontainer">
       {!Access && (
         <form onSubmit={handleSIgnup}>
+          <div className="innerSIgnUpDiv" >
           <h1 style={{ color: "white" }}> Create an Account</h1>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Sign Up</button>
-
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+              <button type="submit" >Sign Up</button>
           <p style={{ color: "white" }}>
             Already have an Account? <NavLink to="/mysignin">Sign In</NavLink>{" "}
           </p>
@@ -52,6 +52,8 @@ const MySignup = () => {
             <NavLink to="/forgotpassword">Forgot Password</NavLink>
           </p>
           {myerror && <div style={{ color: "red" }}> {myerror} </div>}
+          </div>
+
         </form>
       )}
     </div>
