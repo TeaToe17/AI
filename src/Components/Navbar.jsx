@@ -141,7 +141,7 @@ const Navbar = () => {
                 {!Access && (
                   <div className="menuToggle">
                     {" "}
-                    <NavLink to="/mysignup" onClick={() => toggleMenu()}>
+                    <NavLink to="/" onClick={() => toggleMenu()}>
                       Sign Up
                     </NavLink>
                     <NavLink to="/mysignin" onClick={() => toggleMenu()}>

@@ -10,7 +10,6 @@ import "../blog-pages.css";
 const MySignin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displaySignin, setDisplaySignin] = useState(true);
   const [myerror, setMyError] = useState("");
   const navigate = useNavigate();
 
@@ -61,7 +60,7 @@ const MySignin = () => {
             <button type="submit">Sign in</button>
             {myerror && <div style={{ color: "red" }}>{myerror}</div>}
             <div style={{ color: "white" }}>
-              Dont have an Account? <NavLink to="/">Sign Up</NavLink>
+              Dont have an Account? <NavLink to="/mysignup">Sign Up</NavLink>
             </div>
             <p>
               <NavLink to="/forgotpassword">Forgot Password</NavLink>
